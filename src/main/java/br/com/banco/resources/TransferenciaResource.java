@@ -19,13 +19,14 @@ public class TransferenciaResource {
 
     @RequestMapping(value = "page", method = RequestMethod.GET)
     public ResponseEntity<Page<Transferencia>> findPage(@RequestParam(value = "page", defaultValue = "0") Integer page,
+                                                        @RequestParam(value = "filterContaID", defaultValue = "") String filterContaID,
                                                         @RequestParam(value = "filterDataInicio", defaultValue = "") String filterDataInicio,
                                                         @RequestParam(value = "filterDataFim", defaultValue = "") String filterDataFim,
                                                         @RequestParam(value = "filterNomeOperadorTransacao", defaultValue = "") String filterNomeOperadorTransacao,
                                                         @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
                                                         @RequestParam(value = "orderBy", defaultValue = "id") String orderBy,
                                                         @RequestParam(value = "direction", defaultValue = "ASC") String direction) {
-        Page<Transferencia> categorias = transferenciaService.findPage(page, linesPerPage, orderBy, direction,filterDataInicio,filterDataFim,filterNomeOperadorTransacao);
+        Page<Transferencia> categorias = transferenciaService.findPage(page, linesPerPage, orderBy, direction,filterContaID,filterDataInicio,filterDataFim,filterNomeOperadorTransacao);
         return ResponseEntity.ok().body(categorias);
     }
 
