@@ -61,18 +61,16 @@
             <version>5.0.0</version>
         </dependency>
 
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.data</groupId>-->
-<!--            <artifactId>spring-data-commons</artifactId>-->
-<!--            <version>3.1.1</version>-->
-<!--        </dependency>-->
-
         <!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-core -->
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-core</artifactId>
             <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
 
 

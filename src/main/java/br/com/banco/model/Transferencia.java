@@ -37,6 +37,16 @@ public class Transferencia implements Serializable {
 
     public Transferencia() {
     }
+
+    public Transferencia(Long id, LocalDate dataTransferencia, BigDecimal valor, String tipoTransferencia, String nomeOperadorTransacao, Conta conta) {
+        this.id = id;
+        this.dataTransferencia = dataTransferencia;
+        this.valor = valor;
+        this.tipoTransferencia = tipoTransferencia;
+        this.nomeOperadorTransacao = nomeOperadorTransacao;
+        this.conta = conta;
+    }
+
     public Long getId() {
         return id;
     }
@@ -83,5 +93,18 @@ public class Transferencia implements Serializable {
 
     public void setConta(Conta conta) {
         this.conta = conta;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Transferencia{");
+        sb.append("id=").append(id);
+        sb.append(", dataTransferencia=").append(dataTransferencia);
+        sb.append(", valor=").append(valor);
+        sb.append(", tipoTransferencia='").append(tipoTransferencia).append('\'');
+        sb.append(", nomeOperadorTransacao='").append(nomeOperadorTransacao).append('\'');
+        sb.append(", conta=").append(conta);
+        sb.append('}');
+        return sb.toString();
     }
 }
