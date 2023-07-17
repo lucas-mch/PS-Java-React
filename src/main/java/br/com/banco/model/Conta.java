@@ -25,6 +25,11 @@ public class Conta  implements Serializable {
     public Conta() {
     }
 
+    public Conta(long id, String nomeResponsavel) {
+        this.id = id;
+        this.nomeResponsavel = nomeResponsavel;
+    }
+
     public long getId() {
         return id;
     }
@@ -43,5 +48,16 @@ public class Conta  implements Serializable {
 
     public List<Transferencia> getTransferencia() {
         return this.transferencias;
+    }
+
+    public void addTransferencia(Transferencia transferencia) { this.transferencias.add(transferencia); }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Conta{");
+        sb.append("id=").append(id);
+        sb.append(", nomeResponsavel='").append(nomeResponsavel).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
